@@ -1,0 +1,30 @@
+<idea-plugin>
+  <id>top.macondo.idea.plugins.cleanclean</id>
+  <name>cleanclean</name>
+  <version>1.0</version>
+  <vendor email="zhangchong1206@foxmail.com" url="http://www.macondo.top">macondo</vendor>
+
+  <description>删除项目中非必要的文件。例如，logs、target、以及其他插件产生的文件jrebel.xml、xxx.iml;适合在项目代码重构过程中使用。</description>
+
+  <change-notes><![CDATA[
+      删除项目中非必要的文件。例如，logs、target、以及其他插件产生的文件jrebel.xml、xxx.iml;适合在项目代码重构过程中使用。
+      第一版：基础功能.<br>
+      <em>删除文件</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <actions>
+    <action class="top.macondo.idea.plugins.cleanclean.CleanFileAction" id="CleanFileAction"
+            popup="true" text="Clean Extra Files" >
+      <add-to-group group-id="RefactoringMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
